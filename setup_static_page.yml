@@ -13,3 +13,10 @@
         name: "{{ item }}"
         state: present
       with_items: "{{ packages }}"
+
+    - name: Git clone remote static page repo
+      sudo: yes
+      git:
+        repo=https://github.com/Yaowenjie/static_page.git
+        dest=/home/var/www/static_page
+        update=yes
