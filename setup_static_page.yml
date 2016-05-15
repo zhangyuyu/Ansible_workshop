@@ -1,0 +1,8 @@
+---
+- hosts: static_page
+  tasks:
+    - name: Ensure git installed
+      sudo: yes
+      apt:
+        name: git
+        state: present
