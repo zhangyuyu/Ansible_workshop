@@ -6,3 +6,9 @@
       apt:
         name: git
         state: present
+
+    - name: Ensure apache2 installed
+      sudo: yes
+      apt:
+          name: apache2
+          state: present
