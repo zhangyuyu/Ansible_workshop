@@ -1,14 +1,15 @@
 ---
 - hosts: static_page
-  tasks:
-    - name: Ensure git installed
-      sudo: yes
-      apt:
-        name: git
-        state: present
 
-    - name: Ensure apache2 installed
+  vars:
+    packages:
+      - git
+      - apache2
+
+  tasks:
+    - name: Ensure packages installed
       sudo: yes
       apt:
-          name: apache2
-          state: present
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ packages }}"
