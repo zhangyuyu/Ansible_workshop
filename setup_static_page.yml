@@ -26,3 +26,9 @@
       apache2_module:
         name: rewrite
         state: present
+
+    - name: Start apache2 service
+      sudo: yes
+      service:
+        name: apache2
+        state: restarted
