@@ -1,12 +1,7 @@
 ---
 - hosts: static_page
-
-  vars:
-    packages:
-      - git
-      - apache2
-    repo_url: https://github.com/Yaowenjie/static_page.git
-    dest_dir: /var/www/html/static_page
+  vars_files:
+    - "variables.yml"
 
   tasks:
     - name: Apt update

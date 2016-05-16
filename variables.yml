@@ -1,0 +1,6 @@
+---
+packages:
+  - git
+  - apache2
+repo_url: https://github.com/Yaowenjie/static_page.git
+dest_dir: /var/www/html/static_page
