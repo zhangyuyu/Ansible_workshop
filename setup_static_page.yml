@@ -23,7 +23,7 @@
       sudo: yes
       git:
         repo=https://github.com/Yaowenjie/static_page.git
-        dest=/home/var/www/static_page
+        dest=/var/www/html/static_page
         update=yes
 
     - name: Enabled apache2 mod_rewrite
