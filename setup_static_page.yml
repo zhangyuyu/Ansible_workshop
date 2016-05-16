@@ -5,6 +5,8 @@
     packages:
       - git
       - apache2
+    repo_url: https://github.com/Yaowenjie/static_page.git
+    dest_dir: /var/www/html/static_page
 
   tasks:
     - name: Apt update
@@ -22,8 +24,8 @@
     - name: Git clone remote static page repo
       sudo: yes
       git:
-        repo=https://github.com/Yaowenjie/static_page.git
-        dest=/var/www/html/static_page
+        repo={{ repo_url }}
+        dest={{ dest_dir }}
         update=yes
 
     - name: Enabled apache2 mod_rewrite
@@ -32,7 +34,7 @@
         name: rewrite
         state: present
 
-    - name: Start apache2 service
+    - name: Restart apache2 service
       sudo: yes
       service:
         name: apache2
