@@ -7,6 +7,11 @@
       - apache2
 
   tasks:
+    - name: Apt update
+      sudo: yes
+      apt:
+        update_cache: yes
+
     - name: Ensure packages installed
       sudo: yes
       apt:
