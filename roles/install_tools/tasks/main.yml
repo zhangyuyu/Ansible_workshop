@@ -1,0 +1,12 @@
+---
+- name: Apt update
+  sudo: yes
+  apt:
+    update_cache: yes
+
+- name: Ensure packages installed
+  sudo: yes
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ packages }}"

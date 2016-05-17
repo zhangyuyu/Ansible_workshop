@@ -2,35 +2,8 @@
 - hosts: static_page
   vars_files:
     - "variables.yml"
-
-  tasks:
-    - name: Apt update
-      sudo: yes
-      apt:
-        update_cache: yes
-
-    - name: Ensure packages installed
-      sudo: yes
-      apt:
-        name: "{{ item }}"
-        state: present
-      with_items: "{{ packages }}"
-
-    - name: Git clone remote static page repo
-      sudo: yes
-      git:
-        repo={{ repo_url }}
-        dest={{ dest_dir }}
-        update=yes
-
-    - name: Enabled apache2 mod_rewrite
-      sudo: yes
-      apache2_module:
-        name: rewrite
-        state: present
-
-    - name: Restart apache2 service
-      sudo: yes
-      service:
-        name: apache2
-        state: restarted
+    
+  roles:
+    - install_tools
+    - git_clone_file
+    - config_apache2
