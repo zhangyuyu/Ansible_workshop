@@ -1,6 +1,7 @@
 ---
 - name: Apt update
   sudo: yes
+  run_once: true
   apt:
     update_cache: yes
 

@@ -1,8 +1,6 @@
 ---
 - hosts: static_page
-  vars_files:
-    - "variables.yml"
-    
+
   roles:
     - install_tools
     - git_clone_file
