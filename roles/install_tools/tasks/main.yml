@@ -1,12 +1,10 @@
 ---
 - name: Apt update
-  sudo: yes
   run_once: true
   apt:
     update_cache: yes
 
 - name: Ensure packages installed
-  sudo: yes
   apt:
     name: "{{ item }}"
     state: present

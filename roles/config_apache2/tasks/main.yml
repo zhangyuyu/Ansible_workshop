@@ -1,12 +1,10 @@
 ---
 - name: Enabled apache2 mod_rewrite
-  sudo: yes
   apache2_module:
     name: rewrite
     state: present
 
 - name: Restart apache2 service
-  sudo: yes
   service:
     name: apache2
     state: restarted

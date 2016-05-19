@@ -1,5 +1,7 @@
 ---
 - hosts: static_page
+  become: yes
+  become_method: sudo
 
   roles:
     - install_tools

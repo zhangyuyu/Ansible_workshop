@@ -1,6 +1,5 @@
 ---
 - name: Git clone remote static page repo
-  sudo: yes
   git:
     repo={{ repo_url }}
     dest={{ dest_dir }}
